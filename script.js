@@ -163,3 +163,73 @@ const textoRefletido = document.getElementById("textoRefletido");
 campoInput.addEventListener("input", function() {
     textoRefletido.innerText = campoInput.value;
 });
+
+const num1 = document.getElementById("num1");
+const num2 = document.getElementById("num2");
+
+const btnSoma = document.getElementById("btnSoma");
+const btnSub = document.getElementById("btnSub");
+const btnMulti = document.getElementById("btnMulti");
+const btnDiv = document.getElementById("btnDiv");
+
+const resultado = document.getElementById("resultado");
+
+
+// Funções matemáticas
+function somar(a, b) {
+    return a + b;
+}
+
+function subtrair(a, b) {
+    return a - b;
+}
+
+function multiplicar(a, b) {
+    return a * b;
+}
+
+function dividir(a, b) {
+    return a / b;
+}
+
+
+// Função auxiliar para ler e converter os inputs
+function calcular() {
+    const valor1 = Number(num1.value);
+    const valor2 = Number(num2.value);
+
+    return { valor1, valor2 };
+}
+
+
+// Evento de soma
+btnSoma.addEventListener("click", function() {
+    const { valor1, valor2 } = calcular();
+    resultado.innerText = somar(valor1, valor2);
+});
+
+
+// Evento de subtração
+btnSub.addEventListener("click", function() {
+    const { valor1, valor2 } = calcular();
+    resultado.innerText = subtrair(valor1, valor2);
+});
+
+
+// Evento de multiplicação
+btnMulti.addEventListener("click", function() {
+    const { valor1, valor2 } = calcular();
+    resultado.innerText = multiplicar(valor1, valor2);
+});
+
+
+// Evento de divisão
+btnDiv.addEventListener("click", function() {
+    const { valor1, valor2 } = calcular();
+
+    if (valor2 === 0) {
+        resultado.innerText = "Não se divide por 0";
+    } else {
+        resultado.innerText = dividir(valor1, valor2);
+    }
+});
