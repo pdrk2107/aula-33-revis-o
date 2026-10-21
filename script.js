@@ -124,3 +124,42 @@ console.log("Média de idade:", mediaIdade);
 const alunoNotaBaixa = alunos.find(aluno => aluno.nota < 6);
 
 console.log("Primeiro aluno com nota menor que 6:", alunoNotaBaixa);
+// Exercício 9: Mudar texto com um clique
+const titulo = document.getElementById("titulo");
+const btnMudar = document.getElementById("btnMudar");
+
+btnMudar.addEventListener("click", function() {
+    titulo.innerText = "Título Alterado com Sucesso!";
+});
+
+
+// Exercício 10: Contador simples
+let contagem = 0;
+
+const contador = document.getElementById("contador");
+const btnIncrementar = document.getElementById("btnIncrementar");
+
+btnIncrementar.addEventListener("click", function() {
+    contagem++;
+    contador.innerText = contagem;
+});
+
+
+// Exercício 11: Destacar todos os parágrafos
+const paragrafos = document.querySelectorAll(".paragrafo");
+const btnDestacar = document.getElementById("btnDestacar");
+
+btnDestacar.addEventListener("click", function() {
+    paragrafos.forEach(function(paragrafo) {
+        paragrafo.classList.add("destaque");
+    });
+});
+
+
+// Exercício 12: Espelho de digitação
+const campoInput = document.getElementById("campoInput");
+const textoRefletido = document.getElementById("textoRefletido");
+
+campoInput.addEventListener("input", function() {
+    textoRefletido.innerText = campoInput.value;
+});
